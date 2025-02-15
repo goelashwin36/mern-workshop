@@ -19,6 +19,7 @@ let corsoptions = {
 }
 app.use(cors(corsoptions))
 
+// ###### Connecting Router ###### 
 // http://localhost:8080/todos/xyz
 app.use('/api/todos', todoRouter);
 
