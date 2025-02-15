@@ -28,9 +28,10 @@ Make sure you have the following installed:
 
 2. **Install dependencies**
    ```sh
-   cd client  # Navigate to backend folder
+   cd server  # Navigate to backend folder
    npm install
-   cd ../server  # Navigate to frontend folder
+
+   cd client  # Navigate to frontend folder
    npm install
    ```
 
@@ -53,7 +54,7 @@ Make sure you have the following installed:
      ```
    - Start the frontend:
      ```sh
-     cd ../client
+     cd client
      npm start
      ```
 

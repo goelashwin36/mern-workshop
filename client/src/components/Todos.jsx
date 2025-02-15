@@ -162,7 +162,7 @@ export default function Todos() {
 					marginBottom: "50px",
 				}}
 			>
-				TODO APP
+				TODOS APP
 			</span>
 			<Card sx={{ width: 500, minHeight: 500, padding: 5 }}>
 				<CardContent>
