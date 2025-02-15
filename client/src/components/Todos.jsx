@@ -33,7 +33,7 @@ TODO ->
 }
 */
 
-let host = "http://localhost:8080";
+let host = "http://localhost:8080/api";
 
 export default function Todos() {
 	const [todos, setTodos] = useState([]);

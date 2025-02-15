@@ -6,7 +6,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '.env') })
 
 const mongoose = require('mongoose');
 
-var todoRouter = require('./routes/todo');
+var todoRouter = require('./routes/todo.router');
 const PORT = process.env.PORT || 8080;
 
 var app = express();
@@ -20,7 +20,7 @@ let corsoptions = {
 app.use(cors(corsoptions))
 
 // http://localhost:8080/todos/xyz
-app.use('/todos', todoRouter);
+app.use('/api/todos', todoRouter);
 
 //Connecting to Mongodb
 mongoose.connect(
