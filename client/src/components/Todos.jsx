@@ -33,7 +33,7 @@ TODO ->
 }
 */
 
-let host = "http://localhost:8080/api";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8080/api";
 
 export default function Todos() {
 	const [todos, setTodos] = useState([]);
@@ -43,7 +43,7 @@ export default function Todos() {
 	useEffect(() => {
 		async function getTodos() {
 			try {
-				let todoRes = await axios.get(host + "/todos");
+				let todoRes = await axios.get(API_URL + "/todos");
 				if (todoRes && todoRes.data && todoRes.data.todos) {
 					// Storing all todos in the state
 					setTodos(todoRes.data.todos);
@@ -59,7 +59,7 @@ export default function Todos() {
 	const createTodo = async () => {
 		try {
 			if (newTodoTitle) {
-				let newTodoRes = await axios.post(host + "/todos", {
+				let newTodoRes = await axios.post(API_URL + "/todos", {
 					completed: false,
 					title: newTodoTitle,
 				});
@@ -77,7 +77,7 @@ export default function Todos() {
 	// Deleting an existing TODO
 	const deleteTodo = async (id) => {
 		try {
-			let deleteRes = await axios.delete(host + "/todos/" + id);
+			let deleteRes = await axios.delete(API_URL + "/todos/" + id);
 			if (deleteRes && deleteRes.status == 200) {
 				let updatedTodoList = todos.filter((todo) => todo._id != id);
 				setTodos(updatedTodoList);
@@ -90,7 +90,7 @@ export default function Todos() {
 	// Toggle Checkbox for a TODO
 	const toggleCompleted = async (id, completedStatus) => {
 		try {
-			let updateRes = await axios.put(host + "/todos/" + id, {
+			let updateRes = await axios.put(API_URL + "/todos/" + id, {
 				completed: completedStatus,
 			});
 
