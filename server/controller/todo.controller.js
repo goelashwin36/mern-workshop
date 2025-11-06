@@ -77,7 +77,7 @@ const ToDoController = {
 			const todoId = req.params.id;
 			const updatedTodo = {
 				title: req.body.title,
-				completed: true, //##
+				completed: req.body.completed, //##
 			};
 
 			// Get TODO by ID and Update fields

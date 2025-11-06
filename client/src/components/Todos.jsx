@@ -124,7 +124,7 @@ export default function Todos() {
 					// ###### DELETE BUTTON ######
 					secondaryAction={
 						//Checkpoint - 1
-						<IconButton>
+						<IconButton onClick={() => deleteTodo(todo._id)}>
 							<DeleteIcon />
 						</IconButton>
 					}

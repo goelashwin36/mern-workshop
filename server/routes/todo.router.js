@@ -10,7 +10,7 @@ router.get('/', ToDoController.getAllTodos);
 router.get('/:id', ToDoController.getTodo);
 router.post('/', ToDoController.createTodo);
 router.put('/:id', ToDoController.updateTodo);
-router.post('/:id', ToDoController.deleteTodo);
+router.delete('/:id', ToDoController.deleteTodo);
 
 module.exports = router;
 
